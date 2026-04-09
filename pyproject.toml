@@ -8,3 +8,6 @@ dependencies = []
 
 [dependency-groups]
 dev = []
+
+[tool.uv]
+package = true
