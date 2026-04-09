@@ -7,7 +7,38 @@ requires-python = ">=3.11"
 dependencies = []
 
 [dependency-groups]
-dev = []
+dev = [
+    "ruff>=0.15.9",
+]
 
 [tool.uv]
 package = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [
+    ".venv",
+    "venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "D"]
+ignore = [
+    "D100",
+    "D104",
+    "D203",
+    "D213",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+preview = true
