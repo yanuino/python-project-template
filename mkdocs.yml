@@ -4,7 +4,7 @@ site_url: ""
 
 repo_url: ""
 repo_name: ""
-edit_uri: "edit/main/docs/"
+# edit_uri: "edit/main/docs/"
 
 strict: true
 use_directory_urls: true
