@@ -13,7 +13,7 @@ wheels/
 .venv
 venv/
 
-# Test 
+# Test
 .coverage
 coverage.xml
 htmlcov/
@@ -33,3 +33,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Mkdocs
+site/
+
