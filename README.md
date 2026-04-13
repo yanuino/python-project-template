@@ -85,6 +85,7 @@ Documentation uses **MkDocs**.
 - Validated locally via pre-commit (`mkdocs build --strict`)
 - Fully built in CI
 - Optional publication during release
+See [README.mkdocs.md](README.mkdocs.md) for details.
 
 ---
 
