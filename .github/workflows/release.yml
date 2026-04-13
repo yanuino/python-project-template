@@ -42,7 +42,11 @@ jobs:
           python-version: '3.11'
       - run: pip install uv
       - run: uv sync --dev
-      - run: uv run pyinstaller build/linux.spec
+      - run: |
+          PYINSTALLER_MODULE=myapp \
+          PYINSTALLER_NAME=myapp \
+          uv run pyinstaller build/linux.spec
+
 
   build-windows:
     name: Build Windows binary
@@ -56,4 +60,8 @@ jobs:
           python-version: '3.11'
       - run: pip install uv
       - run: uv sync --dev
-      - run: uv run pyinstaller build/win32.spec
+      - run: |
+          $env:PYINSTALLER_MODULE="myapp"; $env:PYINSTALLER_NAME="myapp"
+          uv run pyinstaller build/win32.spec
+
+
