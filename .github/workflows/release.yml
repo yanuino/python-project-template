@@ -45,7 +45,7 @@ jobs:
       - run: |
           PYINSTALLER_MODULE=myapp \
           PYINSTALLER_NAME=myapp \
-          uv run pyinstaller build/linux.spec
+          uv run pyinstaller packaging/pyinstaller/linux.spec
 
 
   build-windows:
@@ -62,6 +62,6 @@ jobs:
       - run: uv sync --dev
       - run: |
           $env:PYINSTALLER_MODULE="myapp"; $env:PYINSTALLER_NAME="myapp"
-          uv run pyinstaller build/win32.spec
+          uv run pyinstaller packaging/pyinstaller/win32.spec
 
 
