@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
 [project]
 name = "python-template"
 version = "0.1.0"
@@ -6,18 +10,25 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
 
+# Uncomment if you want: uv run project
+# [project.scripts]
+# project = "project.__main__:main"
+
 [dependency-groups]
 dev = [
-    "mkdocs>=1.6.1",
-    "mkdocs-git-revision-date-localized-plugin>=1.5.1",
-    "mkdocs-macros-plugin>=1.5.0",
-    "mkdocs-material>=9.7.6",
-    "mkdocstrings[python]>=1.0.3",
-    "pre-commit>=4.5.1",
-    "pyinstaller>=6.19.0",
-    "pytest>=9.0.3",
-    "ruff>=0.15.9",
+    "mkdocs<2.0",
+    "mkdocs-git-revision-date-localized-plugin",
+    "mkdocs-macros-plugin",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "pre-commit",
+    "pyinstaller",
+    "pytest",
+    "ruff",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/project"]
 
 [tool.uv]
 package = true
@@ -53,4 +64,4 @@ preview = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-
+addopts = "-ra"
